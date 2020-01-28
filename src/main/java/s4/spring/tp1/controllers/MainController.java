@@ -41,6 +41,25 @@ public class MainController {
         }
         return new RedirectView("/items");
     }
+    @GetMapping("items/dec/{nom}")
+    public RedirectView decrementer(@PathVariable String nom,@SessionAttribute List<Element> items) {
+        int index = items.indexOf(new Element(nom));
+        if(index!=-1){
+            items.get(index).dec();
+        }
+        return new RedirectView("/items");
+    }
+
+    @GetMapping("items/delete/{nom}")
+    public RedirectView supprimer(@PathVariable String nom,@SessionAttribute List<Element> items){
+        int index = items.indexOf(new Element(nom));
+        if(index!=-1){
+            items.remove(index);
+        }
+        return new RedirectView("/items");
+    }
+
+
 }
 
 
