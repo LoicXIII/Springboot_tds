@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>On est là, on est là</title>
+</head>
+<body>
+    <p>Ce que on est là signifie :</p>
+
+    <table>
+
+    <tr>
+        <th>Nom        &nbsp;</th>
+
+        <th>Evaluation</th>
+    </tr>
+        {{#items}}
+    <tr>
+        <td>{{nom}}&nbsp;</td>
+        <td>{{evaluation}}</td>
+    </tr>
+        {{/items}}
+    </table>
+</body>
+</html>

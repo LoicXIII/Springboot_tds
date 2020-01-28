@@ -23,4 +23,5 @@ public class HelloController {
 	public String viewHelloDyn(@PathVariable String message) {
 		return "hello";
 	}
+
 }
