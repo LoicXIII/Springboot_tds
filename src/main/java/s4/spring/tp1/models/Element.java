@@ -4,9 +4,20 @@ import java.util.Objects;
 
 public class Element {
     private String nom;
+
+    public int getEvaluation() {
+        return evaluation;
+    }
+
+    public void setEvaluation(int evaluation) {
+        this.evaluation = evaluation;
+    }
+
     private int evaluation;
 
-    public Element() {
+    public Element(String nom) {
+        this.nom=nom;
+        this.evaluation=0;
     }
 
     public String getNom() {
@@ -25,4 +36,10 @@ public class Element {
         return Objects.equals(getNom(), element.getNom());
     }
 
+    public void inc() {
+        evaluation++;
+    }
+    public void dec() {
+        evaluation--;
+    }
 }
