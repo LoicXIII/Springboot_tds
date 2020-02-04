@@ -1,0 +1,10 @@
+package s4.spring.tp1.controllers;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class HelloController {
+	public String helloWorld() {
+		return "Hello World!";
+	}
+}

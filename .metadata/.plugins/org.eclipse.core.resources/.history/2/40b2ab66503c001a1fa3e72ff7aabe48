@@ -1,0 +1,5 @@
+package s4.spring.tp1.controllers;
+
+public class HelloController {
+
+}
