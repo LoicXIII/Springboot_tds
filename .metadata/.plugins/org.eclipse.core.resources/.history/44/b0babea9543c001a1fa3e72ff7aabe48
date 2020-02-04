@@ -1,3 +1,0 @@
-server.servlet.context-path=/
-#Si le port est déjà utilisé, cette commande permet d'indiquer le n° de port souhaité
-server.port=2702
