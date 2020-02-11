@@ -18,4 +18,14 @@ public class Organization {
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "organization")
     private List<User> users;
+
+    public Organization(){
+
+    }
+    public Organization(String name, String domain, String aliases)
+    {
+        this.name=name;
+        this.domain=domain;
+        this.aliases=aliases;
+    }
 }
