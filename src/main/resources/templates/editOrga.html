@@ -1,3 +1,36 @@
 {{ >main/header}}
-<h1 class="ui header">tu es ici</h1>
+<span></span>
+<span></span>
+<h2 class="ui header">
+    <i class="envelope icon"></i>
+    <div class="content">
+        SpringBoot TD n°2
+        <div class="sub header">Application de Messagerie</div>
+    </div>
+</h2>
+<div class="ui container segment">
+    <h2>Modifier une organisation</h2>
+    <div class="ui secondary segment">
+        <div class="ui header">
+            <i class="table icon"></i>
+            <div class="content">
+                models\Organization
+                <div class="sub header">Editing an existing object</div>
+            </div>
+        </div>
+    </div>
+    <form class="ui form" action="/orgas/editOrga/?id={{id}}" method="post">
+        <label>Nom</label>
+        <input type="text" name="name" placeholder="Nom">
+        <label>Domaine</label>
+        <input type="text" name="domain" placeholder="Domaine">
+        <label>Aliases</label>
+        <input type="text" name="aliases" placeholder="Aliases">
+        <br>
+        <br>
+        <button type="submit" class="ui button green"> <i class="check circle outline icon"></i> Valider</button>
+        <a href="/orgas/index" class="ui button"><i class="circle outline icon"></i>Annuler</a>
+    </form>
+</div>
+
 {{ >main/footer}}

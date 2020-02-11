@@ -13,6 +13,8 @@ import s4.spring.td2.repositories.OrgaRepository;
 
 import java.util.Optional;
 
+import static java.lang.Integer.parseInt;
+
 @Controller
 public class OrgaController {
     @Autowired
@@ -31,27 +33,36 @@ public class OrgaController {
     }
 
     @PostMapping("/orgas/addOrga")
-    public RedirectView actionAddOrga(@RequestParam String nom, @RequestParam String domain, @RequestParam String aliases)
+    public RedirectView actionAddOrga(@RequestParam String name, @RequestParam String domain, @RequestParam String aliases)
     {
-        repository.saveAndFlush(new Organization(nom,domain,aliases));
+        repository.saveAndFlush(new Organization(name,domain,aliases));
         return new RedirectView("index");
     }
-    @PostMapping("/orgas/delete/{id}")
+    @GetMapping("/orgas/delete/{id}")
     public RedirectView actionDelete(@PathVariable int id)
     {
-        repository.delete(repository.findById(id));
-        return new RedirectView("index");
+        Organization orga=repository.findById(id);
+        if(orga!=null) {
+            repository.delete(orga);
+        }
+        return new RedirectView("/orgas/index");
     }
-
-
-
 
     @GetMapping("orgas/edit/{id}")
-    public String viewEdit(@PathVariable int id){
+    public String viewEdit(ModelMap model,@PathVariable int id){
+        model.put("orgas",repository.findById(id));
         return "editOrga";
-
     }
+    @PostMapping("/orgas/editOrga")
+    public RedirectView actionEditOrga(@RequestParam int id,@RequestParam String name, @RequestParam String domain, @RequestParam String aliases)
+    {
+        Organization orga = repository.findById(id);
 
-
+        orga.setName(name);
+        orga.setDomain(domain);
+        orga.setAliases(aliases);
+        repository.saveAndFlush(orga);
+        return new RedirectView("/orgas/index");
+    }
 
 }

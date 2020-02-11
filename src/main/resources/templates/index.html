@@ -31,12 +31,14 @@
                 <button class="circular ui basic icon button ">
                     <i class="icon eye"></i>
                 </button>
-                <a href="edit" class="circular ui basic icon button ">
+                <a href="edit/{{id}}" class="circular ui basic icon button ">
                     <i class="icon edit"></i>
                 </a>
-                <a href="delete" class="circular red ui basic icon button ">
+
+                <a href="delete/{{id}}" class="circular red ui basic icon button ">
                     <i class="icon close "></i>
                 </a>
+
             </td>
         </tr>
         {{/orgas}}
@@ -55,5 +57,15 @@
         </tr>
         </tfoot>
     </table>
+
+    <div class="ui error message">
+        <i class="close icon"></i>
+        <div class="header">
+            Confirmation de la suppression
+        </div>
+
+            <p>Confirmez-vous la suppression de</p>
+
+    </div>
 </div>
 {{ >main/footer}}

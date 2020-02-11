@@ -10,6 +10,31 @@ public class Organization {
     private int id;
 
     private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public String getAliases() {
+        return aliases;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    public void setAliases(String aliases) {
+        this.aliases = aliases;
+    }
+
     private String domain;
     private String aliases;
 
