@@ -53,4 +53,12 @@ public class Organization {
         this.domain=domain;
         this.aliases=aliases;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
