@@ -12,7 +12,7 @@ public class Language {
 
     private String name;
 
-    @OneToMany(mappedBy = "Langage", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "language", cascade = CascadeType.ALL)
     private List<Script> script;
 
 

@@ -16,7 +16,7 @@ public class Script {
     private String creationDate;
 
     @ManyToOne
-    private Language langue;
+    private Language language;
 
     @ManyToOne
     private User user;
@@ -24,7 +24,7 @@ public class Script {
     @ManyToOne
     private Category category;
 
-    @OneToMany(mappedBy = "Script", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "scripts", cascade = CascadeType.ALL)
     private List<History> history;
 
 

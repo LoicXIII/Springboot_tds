@@ -11,7 +11,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @OneToMany(mappedBy = "User", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Script> scripts;
 
     private String login;

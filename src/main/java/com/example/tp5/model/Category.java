@@ -11,8 +11,8 @@ public class Category {
 
     private String name;
 
-    @OneToMany(mappedBy = "Category", cascade = CascadeType.ALL)
-    private List<Script> script;
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private List<Script> scripts;
 
     public Category(){
 
