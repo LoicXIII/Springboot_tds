@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 import javax.persistence.*;
 import java.util.List;
 
-public class Langage {
+public class Language {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +16,12 @@ public class Langage {
     @OneToMany(mappedBy = "Langage", cascade = CascadeType.ALL)
     private List<Script> script;
 
-    public Langage(int id, String name){
+
+    public Language(){
+        this(0,"");
+    }
+
+    public Language(int id, String name){
         this.id=id;
         this.name=name;
     }

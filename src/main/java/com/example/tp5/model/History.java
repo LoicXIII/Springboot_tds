@@ -19,8 +19,11 @@ public class History {
     @ManyToOne
     private Script Script;
 
+    public History(){
+        this(0,"","","");
+    }
+
     public History(int id, String date, String content, String comment){
-        super();
         this.id=id;
         this.date=date;
         this.content=content;

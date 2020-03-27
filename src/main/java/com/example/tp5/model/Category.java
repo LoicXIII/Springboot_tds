@@ -15,8 +15,11 @@ public class Category {
     @OneToMany(mappedBy = "Category", cascade = CascadeType.ALL)
     private List<Script> script;
 
+    public Category(){
+        this(0,"");
+    }
+
     public Category(int id, String name){
-        super();
         this.id=id;
         this.name=name;
     }

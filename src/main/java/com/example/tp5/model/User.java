@@ -59,6 +59,12 @@ public class User {
         this.identity = identity;
     }
 
+
+    public User(){
+        this(0,"","","","");
+    }
+
+
     public User(int id, String login, String password, String email, String identity){
         super();
         this.id=id;

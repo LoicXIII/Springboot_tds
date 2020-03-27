@@ -17,7 +17,7 @@ public class Script {
     private String creationDate;
 
     @ManyToOne
-    private Langage langue;
+    private Language langue;
 
     @ManyToOne
     private User user;
@@ -28,8 +28,12 @@ public class Script {
     @OneToMany(mappedBy = "Script", cascade = CascadeType.ALL)
     private List<History> history;
 
+
+    public Script(){
+        this(0,"","","","");
+    }
+
     public Script(int id, String title, String description, String content,String creationDate){
-        super();
         this.id=id;
         this.title=title;
         this.description=description;
