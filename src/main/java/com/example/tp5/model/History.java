@@ -1,30 +1,30 @@
 package com.example.tp5.model;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.*;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.ManyToOne;
-
+@Entity
 public class History {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @ManyToOne  //(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    private Script scripts;
+
     private String date;
+
     private String content;
+
     private String comment;
 
-    @ManyToOne
-    private Script Script;
+    public History()
+    {
 
-    public History(){
-        this(0,"","","");
     }
 
-    public History(int id, String date, String content, String comment){
-        this.id=id;
+    public History(String date, String content, String comment)
+    {
         this.date=date;
         this.content=content;
         this.comment=comment;
@@ -60,5 +60,13 @@ public class History {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public Script getScripts() {
+        return scripts;
+    }
+
+    public void setScripts(Script scripts) {
+        this.scripts = scripts;
     }
 }

@@ -1,10 +1,9 @@
 package com.example.tp5.model;
 
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class Script {
 
     @Id
@@ -30,11 +29,10 @@ public class Script {
 
 
     public Script(){
-        this(0,"","","","");
+
     }
 
-    public Script(int id, String title, String description, String content,String creationDate){
-        this.id=id;
+    public Script(String title, String description, String content,String creationDate){
         this.title=title;
         this.description=description;
         this.content=content;

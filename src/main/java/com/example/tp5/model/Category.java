@@ -1,10 +1,9 @@
 package com.example.tp5.model;
 
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,11 +15,10 @@ public class Category {
     private List<Script> script;
 
     public Category(){
-        this(0,"");
+
     }
 
-    public Category(int id, String name){
-        this.id=id;
+    public Category(String name){
         this.name=name;
     }
 

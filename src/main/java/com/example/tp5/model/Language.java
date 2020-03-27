@@ -1,10 +1,9 @@
 package com.example.tp5.model;
 
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class Language {
 
     @Id
@@ -18,11 +17,10 @@ public class Language {
 
 
     public Language(){
-        this(0,"");
+
     }
 
-    public Language(int id, String name){
-        this.id=id;
+    public Language(String name){
         this.name=name;
     }
 
