@@ -1,0 +1,28 @@
+{{>/main/header}}
+<h2 class="ui header" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.w3.org/1999/xhtml">
+    <i class="github icon"></i>
+    <div class="content">
+        Tp5
+        <div class="sub header">espace de création d'un script du tp5</div>
+    </div>
+</h2>
+
+
+<div>
+    <form action="@{/script/submit}" th:action="@{/scriptSubmit}" th:object="${Script}" method="post">
+        Titre : <input type="text">
+        Description <input type="text">
+        content <input type="text">
+        date de création <input type="text">
+        <button type="submit">Créer</button>
+    </form>
+</div>
+
+
+
+
+
+{{>/main/footer}}
