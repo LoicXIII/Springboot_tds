@@ -26,7 +26,23 @@ public class User {
 
     }
 
-    public User(String login, String password, String email,String identity) {
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public User(String login, String password, String email, String identity) {
         this.login = login;
         this.password = password;
         this.email = email;

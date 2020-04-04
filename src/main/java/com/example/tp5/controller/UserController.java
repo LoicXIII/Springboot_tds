@@ -28,26 +28,26 @@ public class UserController {
 
     @GetMapping("/index")
     public String index(Model model) {
-        model.addAttribute("message"," ");
         return "index";
     }
     @GetMapping("/login")
-    public RedirectView pageConnexion(HttpSession session_param) {
+    public RedirectView pageConnexion(HttpSession session_param, RedirectAttributes attribute) {
         if(userRepository.findAll().isEmpty()) {
             User user1 = new User("loki", "1234", "loki@gmail", "Loic Le Goas");
             userRepository.saveAndFlush(user1);
         }
         User connecte = userRepository.findAll().get(0);
         session_param.setAttribute("utilisateur connecte", connecte);
-        System.out.println(connecte);
         session_param.getAttribute("utilisateur connecte");
+        attribute.addFlashAttribute("login",connecte.getLogin());
+        attribute.addFlashAttribute("mail",connecte.getEmail());
         return new RedirectView("/index");
     }
 
     @GetMapping("/logout")
-    public RedirectView pageDeconnexion(HttpSession session_param, Model model){
+    public RedirectView pageDeconnexion(HttpSession session_param, Model model, RedirectAttributes attribute){
         session_param.setAttribute("",session_param.getAttribute("utilisateur connecte"));
-        model.addAttribute("message","Vous vous êtes déconnecté avec succès");
+        attribute.addFlashAttribute("message","Vous vous êtes déconnecté avec succès");
         return new RedirectView("/index");
     }
 }

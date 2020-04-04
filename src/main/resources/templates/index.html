@@ -8,10 +8,25 @@
 </h2>
 <div class="ui relaxed divided list">
 
-    <a href="login">se connecter</a>
+    {{#login}}
+    <h3>
+    <div class="content"> {{login}}
+    {{/login}}
+    {{#mail}}
+    <div class="sub header">{{mail}}</div></div></h3>
     <a href="logout">se déconnecter</a>
+    {{/mail}}
+    {{^login}}
+    <a href="login">se connecter</a>
+    {{/login}}
 
+
+
+    {{#message}}
     <p> {{message}} </p>
+    {{/message}}
+
+
 
 </div>
 {{>/main/footer}}
