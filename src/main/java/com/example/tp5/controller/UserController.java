@@ -3,6 +3,7 @@ package com.example.tp5.controller;
 import com.example.tp5.model.User;
 import com.example.tp5.repository.CategoryRepository;
 import com.example.tp5.repository.LanguageRepository;
+import com.example.tp5.repository.ScriptRepository;
 import com.example.tp5.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,9 +26,12 @@ public class UserController {
 
     @Autowired
     private LanguageRepository languageRepository;
+    @Autowired
+    private ScriptRepository scriptRepository;
 
     @GetMapping("/index")
-    public String index(Model model) {
+    public String index(Model model,RedirectAttributes attributes) {
+        attributes.addFlashAttribute("reposScript",scriptRepository);
         return "index";
     }
     @GetMapping("/login")

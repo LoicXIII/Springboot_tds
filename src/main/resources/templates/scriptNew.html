@@ -12,11 +12,11 @@
 
 
 <div>
-    <form action="@{/script/submit}" th:action="@{/scriptSubmit}" th:object="${Script}" method="post">
-        Titre : <input type="text">
-        Description <input type="text">
-        content <input type="text">
-        date de création <input type="text">
+    <form action="submit" method="post">
+        Titre : <input type="text" name="title">
+        Description <input type="text" name="description">
+        content <input type="text" name="content">
+        date de création <input type="text" name="date">
         <button type="submit">Créer</button>
     </form>
 </div>

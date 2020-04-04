@@ -15,6 +15,26 @@
     {{#mail}}
     <div class="sub header">{{mail}}</div></div></h3>
     <a href="logout">se déconnecter</a>
+
+    <div class="content">
+        <a href="/script/new">ajouter un script</a>
+    </div>
+    <table class="ui celled table">
+        <tr>
+            <td>Titre</td>
+            <td>Description</td>
+            <td>Content</td>
+            <td>Date</td>
+        </tr>
+        {{#reposScript}}
+            <tr>
+                <td>{{reposScript.getOne(0).getTitle()}}</td>
+                <td>b</td>
+                <td>b</td>
+                <td>b</td>
+            </tr>
+        {{/reposScript}}
+    </table>
     {{/mail}}
     {{^login}}
     <a href="login">se connecter</a>
